@@ -1,0 +1,70 @@
+{
+    "id": "powerhouse/contributors",
+    "name": "ContributorsApplications",
+    "extension": ".pca",
+    "description": "Contributors applications POC for scalars testing",
+    "author": {
+        "name": "DSpot",
+        "website": "https://dspot.com.pl"
+    },
+    "specifications": [
+        {
+            "version": 1,
+            "changeLog": [],
+            "state": {
+                "global": {
+                    "schema": "type ContributorsApplicationsState {\n  applications: [ContributorApplication!]!\n}\n\ntype ContributorApplication {\n  id: ID!\n  role: String!\n  profile_picture: String\n  name: String!\n  age: String!\n  country: String\n  dob: Date!\n  salary_expectation: Amount_Money\n  x_url: URL\n  why_you: String\n}",
+                    "initialValue": "{\n  \"applications\": []\n}",
+                    "examples": []
+                },
+                "local": {
+                    "schema": "",
+                    "initialValue": "",
+                    "examples": []
+                }
+            },
+            "modules": [
+                {
+                    "id": "KKkbun0n52V/HouP+Gx0li8B+hQ=",
+                    "name": "contributors_application",
+                    "description": "",
+                    "operations": [
+                        {
+                            "id": "64dwkH0GMyx4DqWgqf63HzB8fkA=",
+                            "name": "ADD_APPLICATION",
+                            "description": "",
+                            "schema": "input AddApplicationInput {\n  role: String!\n  profile_picture: String\n  name: String!\n  age: String!\n  country: String\n  dob: Date!\n  salary_expectation: Amount_Money\n  x_url: URL\n  why_you: String\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        },
+                        {
+                            "id": "ZLnGU/u2TDLI8cSJUey6o/NEmTE=",
+                            "name": "UPDATE_APPLICATION",
+                            "description": "",
+                            "schema": "input UpdateApplicationInput {\n  id: ID!\n  role: String!\n  profile_picture: String\n  name: String!\n  age: String!\n  country: String\n  dob: Date!\n  salary_expectation: Amount_Money\n  x_url: URL\n  why_you: String\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        },
+                        {
+                            "id": "N2jgUYZ6neaJ0lKcgmDRH6EvwIY=",
+                            "name": "DELETE_APPLICATION",
+                            "description": "",
+                            "schema": "input DeleteApplicationInput {\n  id: ID!\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

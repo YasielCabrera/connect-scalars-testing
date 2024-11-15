@@ -1,0 +1,70 @@
+{
+    "id": "powerhouse/todolist",
+    "name": "ToDoList",
+    "extension": ".phd",
+    "description": "Simple todo list",
+    "author": {
+        "name": "DSpot",
+        "website": "https://powerhouse.inc"
+    },
+    "specifications": [
+        {
+            "version": 1,
+            "changeLog": [],
+            "state": {
+                "global": {
+                    "schema": "# Defines a GraphQL type for the state of the to-do list document\ntype ToDoListState {\n  items: [ToDoItem!]! # Array of to-do items\n  stats: ToDoListStats! # Statistics about the to-do list items\n}\n\n# Defines a GraphQL type for a single to-do item\ntype ToDoItem {\n  id: ID! # Unique identifier for each to-do item\n  text: String! # The text description of the to-do item\n  checked: Boolean! # Status of the to-do item (checked/unchecked)\n}\n\n# Defines a GraphQL type for the statistics of the to-do list\ntype ToDoListStats {\n  total: Int! # Total number of items\n  checked: Int! # Number of checked items\n  unchecked: Int! # Number of unchecked items\n}",
+                    "initialValue": "{\n  \"items\": [],\n  \"stats\": {\n    \"total\": 0,\n    \"checked\": 0,\n    \"unchecked\": 0\n  }\n}",
+                    "examples": []
+                },
+                "local": {
+                    "schema": "",
+                    "initialValue": "",
+                    "examples": []
+                }
+            },
+            "modules": [
+                {
+                    "id": "q4XP2JKDgwsZ3jerTiOBrx5QxhA=",
+                    "name": "to_do_list",
+                    "description": "",
+                    "operations": [
+                        {
+                            "id": "vBDF2WIZZh0NpYdYvezq5fuNUIA=",
+                            "name": "ADD_TODO_ITEM",
+                            "description": "",
+                            "schema": "input AddTodoItemInput {\n  id: ID!\n  text: String!\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        },
+                        {
+                            "id": "ljCSbYRi8/Mn0D7ftRKWT2tQ23c=",
+                            "name": "UPDATE_TODO_ITEM",
+                            "description": "",
+                            "schema": "input UpdateTodoItemInput {\n  id: ID!\n  text: String\n  checked: Boolean\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        },
+                        {
+                            "id": "GXxI1iDlUoTE4RzdXTTj5IYkNiw=",
+                            "name": "DELETE_TODO_ITEM",
+                            "description": "",
+                            "schema": "input DeleteTodoItemInput {\n  id: ID!\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

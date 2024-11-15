@@ -1,0 +1,61 @@
+scalar Amount_Tokens
+scalar EthereumAddress
+scalar Amount_Percentage
+scalar EmailAddress
+scalar Date
+scalar DateTime
+scalar URL
+scalar Amount_Money
+scalar OLabel
+scalar Currency
+scalar PHID
+scalar OID
+type ContributorsApplicationsState {
+  applications: [ContributorApplication!]!
+}
+
+type ContributorApplication {
+  id: ID!
+  role: String!
+  profile_picture: String
+  name: String!
+  age: String!
+  country: String
+  dob: Date!
+  salary_expectation: Amount_Money
+  x_url: URL
+  why_you: String
+}
+
+
+
+# contributors_application
+
+input AddApplicationInput {
+  role: String!
+  profile_picture: String
+  name: String!
+  age: String!
+  country: String
+  dob: Date!
+  salary_expectation: Amount_Money
+  x_url: URL
+  why_you: String
+}
+
+input UpdateApplicationInput {
+  id: ID!
+  role: String!
+  profile_picture: String
+  name: String!
+  age: String!
+  country: String
+  dob: Date!
+  salary_expectation: Amount_Money
+  x_url: URL
+  why_you: String
+}
+
+input DeleteApplicationInput {
+  id: ID!
+}
