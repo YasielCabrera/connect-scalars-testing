@@ -6,13 +6,10 @@ import {
   ContributorsApplicationsAction,
   ContributorsApplicationsLocalState,
   actions,
-  ContributorApplication,
   AddApplicationInput,
 } from "../../document-models/contributors-applications";
-import { utils as documentModelUtils } from "document-model/document";
-import { Button, ValidatorHandler } from "@powerhousedao/design-system";
+import { Button } from "@powerhousedao/design-system";
 import { Application } from "./application";
-import { NewApplicationForm } from "./new-application-form";
 
 import {
   Form,
@@ -67,11 +64,11 @@ export default function Editor({ document, dispatch }: IProps) {
             />
             <UrlField label="Profile Picture (URL)" name="profile_picture" />
             <StringField
-              customValidator={validateUniqueName as ValidatorHandler}
               label="Name"
               name="name"
               placeholder="John Doe"
               required
+              validators={validateUniqueName}
             />
             <NumberField
               label="Age"
@@ -96,7 +93,12 @@ export default function Editor({ document, dispatch }: IProps) {
               name="salary_expectation"
               placeholder="100000"
             />
-            <UrlField label="X (Twitter) URL" name="x_url" />
+            <UrlField
+              label="X (Twitter) URL"
+              name="x_url"
+              placeholder="https://x.com/username"
+              showIcon
+            />
             <StringField label="Why you?" multiline name="why_you" />
 
             <Button type="submit">Submit</Button>
