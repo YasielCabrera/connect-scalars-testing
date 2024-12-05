@@ -16,7 +16,7 @@ import {
   StringField,
   NumberField,
   UrlField,
-} from "@powerhousedao/design-system";
+} from "@powerhousedao/design-system/scalars";
 
 export type IProps = EditorProps<
   ContributorsApplicationsState,
